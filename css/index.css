@@ -1,0 +1,143 @@
+/*
+    ------------- PROPIEDADES GENERALES ------------------------------------------------------------------------------------------------
+*/
+* {
+    margin: 0;      /*Propiedades iniciales para todos los componentes*/
+    padding: 0;
+}
+
+body {
+    height: 100vh;      /*Se especifica que el body ocupe toda la pantalla*/
+    font-family: 'Segoe UI';        /*Se especifica la fuente que se va a usar*/
+}
+
+/*
+    ------------- PROPIEDADES DEL HEADER -----------------------------------------------------------------------------------------------
+*/
+
+header {
+    padding: 0 20px;        /*El header tendrá un padding de 20px a ambos lados*/
+    width: calc(100% - 40px);       /*Al haber indicado el padding el ancho debe de ser el total menos este*/
+    height: 15dvh;      /*Se especifica que el alto del header sea 15dvh, es decir, que ocupe un 15% de la pantalla completa*/
+    background-color: #102d50;
+    display: flex;
+    justify-content: space-evenly;      /*Se especifica que los elementos del header estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos del header estén alineados en el centro*/
+    position: fixed;        /*Se especifica que el header no se moverá de la pantalla aún habiendo scroll*/
+}
+
+.headerNombre {
+    display: flex;
+    justify-content: space-between;     /*Se especifica que los elementos del div headerNombre tengan un espacio en medio*/
+    align-items: center;        /*Se especifica que los elementos del div headerNombre estén alineados en el centro*/
+    gap: 20px;      /*El espacio que separa a ambos elementos será de 20px*/
+}
+
+.headerNombre img {
+    height: calc(10dvh - 10px);     /*El alto de la imagen será 10dvh menos lo que ocupa su borde*/
+    width: calc(10dvh - 10px);      /*El ancho de la imagen será 10dvh menos lo que ocupa su borde*/
+    object-fit: cover;      /*Se indica que la imagen debe de cubrir todo su contenedor*/
+    border: 5px solid #b85d8b;      /*Se le pone un borde de 5px*/
+}
+
+.headerNombre p {
+    font-weight: bold;      /*Se indica que el texto sea en negrita*/
+    font-size: 1.2em;       /*Se indica que el tamaño de fuente sea 1.2em*/
+    color: white;       /*Se indica que el color de la fuente del texto sea blanco*/
+}
+
+.headerApartados {
+    display: flex;
+    justify-content: space-evenly;      /*Se especifica que los elementos del div headerApartados estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos del div headerApartados estén alineados en el centro*/
+    gap: 30px;      /*El espacio que separa a ambos elementos será de 30px*/
+    font-size: 1.1em;       /*Se indica que el tamaño de fuente sea 1.1em*/
+}
+
+.apartados {
+    display: flex;
+    justify-content: space-evenly;      /*Se especifica que los elementos del div apartados estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos del div apartados estén alineados en el centro*/
+    gap: 30px;      /*El espacio que separa a los elementos será de 30px*/
+    text-align: center;     /*Se especifica que el texto de los elementos del div apartados estén centrados*/
+}
+
+.apartados a {
+    text-decoration: none;      /*Se indica que los hipervínculos del div apartados no tengan ningún estilo*/
+    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+    transition: transform 0.5s;     /*Se atribuye una transición a los hipervículos que durará 0.5s*/
+}
+
+.apartados a.apartadoSeleccionado {
+    color: #D98BAF;     /*Se indica que el apartado seleccionado actualmente tenga un color diferente al resto*/
+    font-weight: bold;      /*Se le indica que vaya en negrita*/
+    font-size: 1.2em;       /*Se indica que el tamaño de la fuente sea mayor que la del resto*/
+}
+
+.apartados a:hover {        /*Efecto que se realizará sobre los hipervínculos del div apartado al pasar el ratón por encima*/
+    color: #F5DCE9;     /*Se le cambia el color al hipervínculo*/
+    transform: scale(1.2);      /*Se escala el tamaño del hipervínculo a 1.2 veces su tamaño original*/
+}
+
+.CV {
+    background-color: #D98BAF;      /*Se especifica que el fondo del div CV sea de este color*/
+    border: 5px solid #b85d8b;      /*Se le añade un borde de 5px*/
+    padding: 10px;
+    color: white;       /*El color de la fuente será blanco*/
+    font-size: 1.2em;       /*El tamaño de fuente será 1.2em*/
+    font-weight: bold;      /*La fuente será en negrita*/
+    transition: filter 0.5s;        /*Se atribuye una transición al div CV que durará 0.5s*/
+    text-align: center;     /*El texto estará centrado*/
+}
+
+.CV a {
+    text-decoration: none;      /*Se indica que los hipervínculos del div CV no tengan ningún estilo*/
+    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+}
+
+.CV:hover {     /*Efecto que se realizará el div CV al pasar el ratón por encima*/
+    filter: hue-rotate(24deg);      /*Se cambiará el tono del div CV 24 grados en el círculo cromático de colores*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .headerNombre p {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del texto del div headerNombre*/
+        width: 100px;       /*Se cambiará el tamaño del del texto del div headerNombre*/
+    }
+
+    .headerApartados {
+        gap: 15px;      /*Se cambiará el espacio entre elementos del div headerApartados*/
+        font-size: 1em;     /*Se cambiará el tamaño de fuente de los textos del div headerApartados*/
+    }
+
+    .headerNombre {
+        gap: 10px;      /*Se cambiará el espacio entre elementos del div headerNombre*/
+    }
+
+    .CV {
+        font-size: 1.1em;       /*Se cambiará el tamaño de fuente del texto del div CV*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    .CV {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del texto del div CV*/
+    }
+
+    .apartados {
+        font-size: 0.9em;       /*Se cambiará el tamaño de fuente del texto del div apartados*/
+        display: grid;      /*Se cambiará el display de flex a grid*/
+        grid-template-columns: repeat(2, 1fr);      /*Se especificará que el grid tenga 2 columnas del mismo tamaño*/
+        row-gap: 20px;      /*Se especificará que el espacio entre las columnas sea de 20px*/
+    }
+}
+
+@media screen and (max-height: 500px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 500px de alto*/
+    .CV {
+        scale: 0.6;     /*Se escala el tamaño del hipervínculo a 0.6 veces su tamaño original*/
+    }
+
+    .headerNombre p {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del texto del div headerNombre*/
+    }
+}
