@@ -13,18 +13,13 @@ body {
 
 h1 {
     font-size: 3em;     /*Se indica que los títulos principales tengan un tamaño de fuente de 3em*/
+}
+
+h1, h2, h3 {
     color: #102d50;
 }
 
-h2 {
-    color: #102d50;
-}
-
-h3 {
-    color: #102d50;
-}
-
-p {
+p, ul {
     color: #34495E;
 }
 
@@ -53,6 +48,18 @@ header a:hover, footer a:hover{     /*Efecto que se realizará sobre los hiperv�
     justify-content: start;     /*Los titulos estarán a la izquierda respecto al eje principal*/
     align-items: center;        /*Los titulos estarán centrados respecto al eje horizontal*/
     padding-left: 100px;        /*Los titulos tendrán un espaciado a la izquierda de 100px*/
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    .titulo {
+        width: calc(100% - 30px);       /*El ancho pasará a ser del 100% menos el espacio a la izquierda y lo que ocupan los bordes*/
+        padding-left: 20px;     /*El espacio a la izquierda se reducirá*/
+        margin-top: 10px;       /*El espacio superior se reducirá*/
+        margin-bottom: 30px;        /*El espacio inferior se reducirá*/
+        font-size: 0.9em;       /*El tamaño de fuente de los títulos será menor*/
+    }
 }
 
 /*
@@ -181,7 +188,7 @@ header {
     }
 
     .headerApartados {
-        gap: 20px;
+        gap: 20px;      /*El espaciado entre apartados será menor*/
     }
 }
 
@@ -206,7 +213,7 @@ header {
     justify-content: space-evenly;      /*Los elementos de la sección esatarán espaciados equitativamente en el eje principal*/
     align-items: center;        /*Los elementos de la sección estarán centrados en el eje horizontal*/
     margin-top: 35dvh;      /*Habrá un margen superior de 35dvh (cubriendo el espacio libre tapado por el header al estar en fixed)*/
-    margin-bottom: 12dvh;       /*Habrá un margen inferior de 12dvh*/
+    margin-bottom: 80px;
 }
 
 .textosPresentacion {
@@ -252,7 +259,7 @@ header {
         justify-content: center;        /*Los elementos estarán centrados en el eje principal*/
         gap: 30px;      /*Se idnica una separación entre el texto y la imagen de 30px*/
         margin-top: 25dvh;      /*Se indica un espacio de 25dvh respecto al header*/
-        margin-bottom: 8dvh;        /*Se indica un espacio de 8dvh respecto al titulo de la siguiente seccion*/
+        margin-bottom: 4dvh;        /*Se indica un espacio de 8dvh respecto al titulo de la siguiente seccion*/
     }
 
     .textosPresentacion {
@@ -276,11 +283,10 @@ header {
     ------------- PROPIEDADES DE LA SECTION PROYECTOS DESTACADOS -----------------------------------------------------------------------
 */
 .proyectosDestacados {
-    height: 600px;
+    height: auto;       /*La altura será lo que ocupe su contenido*/
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
+    align-items: center;        /*Los elementos estarán centrados en el eje principal*/
+    flex-direction: column;     /*Los elementos estarán distribuidos en una sola columna*/
 }
 
 .proyectosDestacados .contenido {
@@ -385,7 +391,6 @@ header {
 
     .proyectosDestacados .contenido {
         margin-right: 0;        /*Se indica que ya no haya margen a la derecha*/
-        margin-top: 60px;       /*Se indica que el margen superior pase a ser de 60px*/
         align-items: center;        /*Los elementos pasarán a estar centrados en el eje horizontal*/
         gap: 35px;      /*El espaciado entre elementos será de 35px*/
     }
@@ -412,8 +417,8 @@ header {
         font-size: 1.1em;       /*El tamaño de fuente del título de la "tarjeta" será menor*/
     }
 
-    .proyecto1 .textos p {      /*El tamaño de fuente de los párrafos de la "tarjeta" será menor*/
-        font-size: 0.85em;
+    .proyecto1 .textos p {
+        font-size: 0.85em;      /*El tamaño de fuente de los párrafos de la "tarjeta" será menor*/
     }
 
     .proyecto1 .textos .tecnologias {
@@ -440,6 +445,111 @@ header {
 }
 
 /*
+    ------------- PROPIEDADES DE LA SECTION TECNOLOGIAS HABILIDADES ------------------------------------------------------------------------------
+*/
+.tecnologiasHabilidades {
+    height: auto;       /*El alto es lo que ocupe su contenido*/
+    display: flex;
+    align-items: center;        /*Los elementos estan centrados en el eje principal*/
+    flex-direction: column;     /*Los elementos están dispuestos en una sola columna*/
+}
+
+.tecnologiasHabilidades .contenido {
+    width: 80%;     /*El contenido de la section ocupa un 80% de la pantalla*/
+    display: flex;
+    flex-direction: column;     /*Los elementos están dispuestos en una sola columna*/
+    justify-content: center;        /*Los elementos están centrados en el eje principal*/
+    align-items: start;     /*Los elementos están alineados a la izquierda en el eje horizontal*/
+    gap: 50px;      /*El espaciado entrte elementos es de 50px*/
+}
+
+.tecnologias {
+    align-self: center;     /*Los elementos del div tecnologias están centrados*/
+    display: flex;
+    justify-content: space-evenly;      /*Los elementos están distribuidos equitativamente*/
+    align-items: center;        /*Los elementos están centrados en el eje horizontal*/
+    width: 100%;        /*El ancho del div tecnologías es todo el espacio disponible*/
+}
+
+.tecnologias div{
+    background-color: #eaf1f8;
+    border: 5px solid  #dce5ef;
+    width: 200px;       /*Los elementos div del div tecnologias tienen 200px de ancho*/
+    height: 200px;      /*Los elementos div del div tecnologias tienen 200px de alto*/
+    padding: 20px;      /*Los elementos div del div tecnologias tienen un espaciado de 20px*/
+    display: flex;
+    flex-direction: column;     /*Los div están distribuidos en una sola columna*/
+    justify-content: start;     /*Los div están alineados al principio en el eje principal*/
+    align-items: start;     /*Los div están alineados a la izquierda en el eje horizontal*/
+    color: #102d50;
+    font-weight: bold;      /*La fuente se verá en negrita*/
+}
+
+.tecnologias .tituloLenguajes, .tituloDesarrollo, .tituloSistemas {
+    font-size: 1.2em;       /*El tamaño de fuente de los títulos de los div del div tecnologías es de 1.2em*/
+    text-decoration: underline;     /*El estilo es subrayado*/
+}
+
+.tecnologias div ul {
+    padding-left: 30px;     /*Las listas tienen un espacio a la izquierdad de 30px*/
+    padding-top: 30px;      /*Las listas tienen un espacio suoperior de 30px*/
+    display: flex;
+    flex-direction: column;     /*Los elementos están dispuestos en una sola columna*/
+    gap: 10px;      /*Los elementos tienen un espaciado entre ellos de 10px*/
+}
+
+.contenido .enlacePerfil {
+    align-self: flex-end;       /*El enlace a Formacion está alineado a la derecha*/
+    font-size: 1.5em;       /*El tamaño de fuente es de 1.5em*/
+    margin-top: 20px;       /*El espacio superior es de 20px*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .tecnologias div {
+        width: 150px;       /*El ancho de los div del div tecnologías pasarán a tener 150px de ancho*/
+        height: 150px;      /*El ancho de los div del div tecnologías pasarán a tener 150px de alto*/
+        padding: 10px;      /*Tendrán un espaciado alrededor de 10px*/
+    }
+
+    .tecnologias .tituloLenguajes, .tituloDesarrollo, .tituloSistemas {
+        font-size: 1em;     /*El tamaño de fuente de los títulos de los div del div tecnologías será de 1em*/
+    }
+
+    .tecnologias div ul {
+        padding-left: 15px;     /*El espacio izquierdo de las listas será de 15px*/
+        padding-top: 15px;      /*El espacio superior de las listas será de 15px*/
+        display: flex;
+        flex-direction: column;     /*Las listas estarán dispuestas en una sola columna*/
+        gap: 5px;       /*El espaciado entre elementos de las listas será de 5px*/
+        font-size: 0.8em;       /*El tamaño de fuente de las listas será de 0.8em*/
+    }
+
+    .contenido .enlacePerfil {
+        align-self: flex-end;       /*El enlace a Formacion estará centrado*/
+        font-size: 1.2em;       /*El tamaño de fuente del enlace será de 1.2em*/
+        margin-top: 20px;       /*El espacio superior del enlace será menor*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    .tecnologiasHabilidades .contenido {
+        gap: 30px;      /*El espacio del contenido de la section tecnologiasHabilidades será de 30px*/
+        align-items: center;        /*Los elementos pasarán a estar centrados*/
+    }
+
+    .tecnologias {
+        flex-direction: column;     /*Los elementos del div tecnologias estarán dispuestos en una sola columna*/
+        gap: 25px;      /*Tendrán un espacio entre ellos de 25px*/
+    }
+
+    .tecnologiasHabilidades .contenido > p,
+    .tecnologiasHabilidades .contenido > a {
+        align-self: center;     /*El primer hijo párrafo y el primer hijo enlace del div tecnologiasHabilidades estarán centrados*/
+        text-align: center;     /*Los textos estarán centrados*/
+    }
+}
+
+/*
     ------------- PROPIEDADES DEL FOOTER -----------------------------------------------------------------------------------------------
 */
 footer {
@@ -450,6 +560,7 @@ footer {
     display: flex;
     justify-content: space-around;      /*Se especifica que los elementos del footer estén espaciados equitativamente teniendo el mismo espacio a su alrededor*/
     align-items: center;        /*Se especifica que los elementos del footer estén alineados en el centro*/
+    margin-top: 60px;
 }
 
 .footerEnlaces {
@@ -524,6 +635,7 @@ footer {
 @media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
     footer {
         height: 50dvh;      /*Se camabiará la altura del header para que ocupe más*/
+        padding-top: 20px;      /*Habrá un espacio superior de 20px*/
     }
     
     .footerEnlaces p{
