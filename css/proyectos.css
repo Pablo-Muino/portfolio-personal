@@ -389,7 +389,7 @@ header {
     gap: 20px;      /*Habrá un espacio entre elementos de 20px*/
 }
 
-.proyectos .contenido .proyecto:nth-child(even){
+.proyecto:nth-child(even){
     flex-direction: row-reverse;        /*Los proyectos pares tendrán la disposición invertida*/
 }
 
@@ -402,7 +402,7 @@ header {
     padding: 10px 0 10px 25px;      /*Se especifica que los textos tengan un espacio de 10px arriba, 10px abajo y 25px a la izquierda*/
 }
 
-.proyectos .contenido .proyecto:nth-child(even) .textos{
+.proyecto:nth-child(even) .textos{
     align-items: end;       /*Los textos de los proyectos pares están alineados a la derecha*/
     text-align: right;
     padding: 10px 25px 10px 0;      /*El espaciado es de 10px arriba, 25 a la derecha y 10px a la izquierda*/
@@ -474,7 +474,8 @@ header {
         gap: 35px;
     }
 
-    .proyecto {
+    .proyecto, 
+    .proyecto:nth-child(even) {
         width: 90%;     /*El ancho de la "tarjeta" será del 90% de la pantalla*/
         height: auto;       /*La altura será lo que ocupe el contenido*/
         flex-direction: column-reverse;     /*La distribución pasará a ser en una columna inversa, es decir, la imagen primero*/
@@ -483,7 +484,8 @@ header {
         gap: 0;     /*Se eliminará el espaciado enltre elementos*/
     }
 
-    .proyecto .textos {
+    .proyecto .textos,
+    .proyecto:nth-child(even) .textos {
         width: 100%;        /*El ancho será el 100% permitido*/
         padding: 20px;      /*Habrá un espaciado alrededor de los textos de 20px*/
         align-items: center;        /*Los textos estarán centrados en el eje principal*/
