@@ -311,6 +311,10 @@ header {
     gap: 20px;      /*Habrá un espacio entre elementos de 20px*/
 }
 
+.proyectosDestacados .contenido .proyecto:nth-child(even){
+    flex-direction: row-reverse;        /*Los proyectos pares tendrán la disposición invertida*/
+}
+
 .proyecto .textos{
     display: flex;
     flex-direction: column;     /*Se indica que los textos de la "tarjeta" estarán dispuestos en una sola columna*/
@@ -318,6 +322,12 @@ header {
     align-items: start;     /*Se indica que los textos estarán alineados a la izquierdad en el eje horizontal*/
     gap: 10px;      /*Se indica un espacio entre textos*/
     padding: 10px 0 10px 25px;      /*Se especifica que los textos tengan un espacio de 10px arriba, 10px abajo y 25px a la izquierda*/
+}
+
+.proyectosDestacados .contenido .proyecto:nth-child(even) .textos{
+    align-items: end;       /*Los textos de los proyectos pares están alineados a la derecha*/
+    text-align: right;
+    padding: 10px 25px 10px 0;      /*El espaciado es de 10px arriba, 25 a la derecha y 10px a la izquierda*/
 }
 
 .proyecto .textos a{

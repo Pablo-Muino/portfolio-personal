@@ -1,0 +1,639 @@
+/*
+    ------------- PROPIEDADES GENERALES ------------------------------------------------------------------------------------------------
+*/
+* {
+    margin: 0;      /*Propiedades iniciales para todos los componentes*/
+    padding: 0;
+}
+
+body {
+    height: 100vh;      /*Se especifica que el body ocupe toda la pantalla*/
+    font-family: 'Segoe UI';        /*Se especifica la fuente que se va a usar*/
+}
+
+h1 {
+    font-size: 3em;     /*Se indica que los títulos principales tengan un tamaño de fuente de 3em*/
+}
+
+h1, h2, h3 {
+    color: #102d50;
+}
+
+p, ul {
+    color: #34495E;
+}
+
+a {
+    color: #D98BAF;
+    font-weight: bold;      /*Se le indica que vaya en negrita*/
+    font-size: 1.2em;       /*Se indica que el tamaño de la fuente sea mayor que la del resto*/
+    text-decoration: none;      /*Se indica que los hipervínculos del div footerEnlaces no tengan ningún estilo*/
+    transition: transform 0.5s;     /*Se atribuye una transición a los hipervículos que durará 0.5s*/
+}
+
+a:hover {        /*Efecto que se realizará sobre los hipervínculos al pasar el ratón por encima*/
+    transform: scale(1.2);      /*Se escala el tamaño del hipervínculo a 1.2 veces su tamaño original*/
+}
+
+header a:hover, footer a:hover{     /*Efecto que se realizará sobre los hipervínculos del header y footer al pasar el ratón por encima*/
+    color: #F5DCE9;     /*Se le cambia el color al hipervínculo*/
+}
+
+.titulo {
+    background-color: #F5DCE9;      /*Todos los títulos de las secciones tendrán un fondo de color diferente*/
+    border: 5px solid #b85d8b;      /*Todos los títulos de las secciones tendrán un borde de color especifico*/
+    width: calc(100% - 110px);      /*El ancho de los titulos será el 100% menos el padding izquierdo y menos el tamaño del borde*/
+    height: 70px;       /*La altura de los titulos será de 70px*/
+    display: flex;
+    justify-content: start;     /*Los titulos están a la izquierda respecto al eje principal*/
+    align-items: center;        /*Los titulos están centrados respecto al eje horizontal*/
+    padding-left: 100px;        /*Los titulos tiene un espaciado a la izquierda de 100px*/
+    margin-top: 80px;       /*Tienen un espacio superior de 80px*/
+    margin-bottom: 60px;        /*Tienen un espacio inferior de 60px*/
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    .titulo {
+        width: calc(100% - 30px);       /*El ancho pasará a ser del 100% menos el espacio a la izquierda y lo que ocupan los bordes*/
+        padding-left: 20px;     /*El espacio a la izquierda se reducirá*/
+        margin-top: 10px;       /*El espacio superior se reducirá*/
+        margin-bottom: 30px;        /*El espacio inferior se reducirá*/
+        font-size: 0.9em;       /*El tamaño de fuente de los títulos será menor*/
+    }
+}
+
+/*
+    ------------- PROPIEDADES DEL HEADER -----------------------------------------------------------------------------------------------
+*/
+header {
+    padding: 0 20px;        /*El header tendrá un padding de 20px a ambos lados*/
+    width: calc(100% - 40px);       /*Al haber indicado el padding el ancho debe de ser el total menos este*/
+    height: 15dvh;      /*Se especifica que el alto del header sea 15dvh, es decir, que ocupe un 15% de la pantalla completa*/
+    background-color: #102d50;
+    display: flex;
+    justify-content: space-evenly;      /*Se especifica que los elementos del header estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos del header estén alineados en el centro*/
+    position: fixed;        /*Se especifica que el header no se moverá de la pantalla aún habiendo scroll*/
+    top: 0;     /*El header estará anclado a la parte superior de la pantalla*/
+}
+
+.headerNombre {
+    display: flex;
+    justify-content: space-between;     /*Se especifica que los elementos del div headerNombre tengan un espacio en medio*/
+    align-items: center;        /*Se especifica que los elementos del div headerNombre estén alineados en el centro*/
+    gap: 20px;      /*El espacio que separa a ambos elementos será de 20px*/
+}
+
+.headerNombre img {
+    height: calc(10dvh - 10px);     /*El alto de la imagen será 10dvh menos lo que ocupa su borde*/
+    width: calc(10dvh - 10px);      /*El ancho de la imagen será 10dvh menos lo que ocupa su borde*/
+    object-fit: cover;      /*Se indica que la imagen debe de cubrir todo su contenedor*/
+    border: 5px solid #b85d8b;      /*Se le pone un borde de 5px*/
+    border-radius: 50%;     /*Se indica que la imagen tenga un borde circular*/
+}
+
+.headerNombre p {
+    font-weight: bold;      /*Se indica que el texto sea en negrita*/
+    font-size: 1.2em;       /*Se indica que el tamaño de fuente sea 1.2em*/
+    color: white;       /*Se indica que el color de la fuente del texto sea blanco*/
+}
+
+.headerApartados {
+    display: flex;
+    justify-content: space-between;      /*Se especifica que los elementos del div headerApartados estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos del div headerApartados estén alineados en el centro*/
+    gap: 30px;      /*El espacio que separa a ambos elementos será de 30px*/
+}
+
+.apartados {
+    display: flex;
+    justify-content: space-evenly;      /*Se especifica que los elementos del div apartados estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos del div apartados estén alineados en el centro*/
+    gap: 30px;      /*El espacio que separa a los elementos será de 30px*/
+    text-align: right;     /*Se especifica que el texto de los elementos del div apartados estén alineados a la derecha*/
+}
+
+.apartados a:not(.apartadoSeleccionado){
+    text-decoration: none;      /*Se indica que los hipervínculos del div apartados no tengan ningún estilo*/
+    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+    font-size: 1.1em;       /*Se indica que el tamaño de fuente sea 1.1em*/
+}
+
+.CV {
+    background-color: #D98BAF;      /*Se especifica que el fondo del div CV sea de este color*/
+    border: 5px solid #b85d8b;      /*Se le añade un borde de 5px*/
+    padding: 10px;      /*Se le indica que haya espaciado de 10px alrededor del contenido*/
+    color: white;       /*El color de la fuente será blanco*/
+    font-size: 1.1em;       /*El tamaño de fuente será 1.1em*/
+    font-weight: bold;      /*La fuente será en negrita*/
+    transition: filter 0.5s;        /*Se atribuye una transición al div CV que durará 0.5s*/
+    text-align: center;     /*El texto estará centrado*/
+}
+
+.CV a {
+    text-decoration: none;      /*Se indica que los hipervínculos del div CV no tengan ningún estilo*/
+    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+}
+
+.CV:hover {     /*Efecto que se realizará el div CV al pasar el ratón por encima*/
+    filter: hue-rotate(24deg);      /*Se cambiará el tono del div CV 24 grados en el círculo cromático de colores*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .headerNombre p {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del texto del div headerNombre*/
+        width: 100px;       /*Se cambiará el tamaño del del texto del div headerNombre*/
+    }
+
+    .headerApartados {
+        gap: 15px;      /*Se cambiará el espacio entre elementos del div headerApartados*/
+        font-size: 1em;     /*Se cambiará el tamaño de fuente de los textos del div headerApartados*/
+    }
+
+    .headerNombre {
+        gap: 10px;      /*Se cambiará el espacio entre elementos del div headerNombre*/
+    }
+
+    .CV {
+        font-size: 1em;       /*Se cambiará el tamaño de fuente del texto del div CV*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    header {
+        height: 20dvh;      /*Se cambiará la altura del header para que ocupe más*/
+    }
+
+    .headerNombre {
+        flex-direction: column;     /*Se cambiará la distribución de la imagen y el nombre, pasando a estar uno debajo del otro*/
+        text-align: center;     /*El nombre estará centrado*/
+        font-size: 0.9em;       /*Se cambiará el tamaño del nombre*/
+    }
+
+    .headerNombre img {
+        height: calc(8dvh - 10px);     /*El alto de la imagen será 8dvh menos lo que ocupa su borde*/
+        width: calc(8dvh - 10px);      /*El ancho de la imagen será 8dvh menos lo que ocupa su borde*/
+    }
+    
+    .CV {
+        font-size: 0.8em;     /*Se cambiará el tamaño de fuente del texto del div CV*/
+        width: 70px;        /*Se cambiarña el ancho del botón para que ocupe menos*/
+    }
+
+    .apartados {
+        font-size: 0.8em;       /*Se cambiará el tamaño de fuente del texto del div apartados*/
+        display: grid;      /*Se cambiará el display de flex a grid*/
+        grid-template-rows: repeat(4, 1fr);      /*Se especificará que el grid tenga 4 filas del mismo tamaño*/
+        row-gap: 2.5px;      /*Se especificará que el espacio entre las columnas sea de 2.5px*/
+    }
+
+    .headerApartados {
+        gap: 20px;      /*El espaciado entre apartados será menor*/
+    }
+}
+
+@media screen and (max-height: 500px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 500px de alto*/
+    .CV {
+        scale: 0.6;     /*Se escala el tamaño del hipervínculo a 0.6 veces su tamaño original*/
+    }
+
+    .headerNombre p {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del texto del div headerNombre*/
+    }
+}
+
+/*
+    ------------- PROPIEDADES DE LA SECTION PROYECTO ACTUAL -----------------------------------------------------------------------
+*/
+.proyectoActual {
+    height: auto;       /*La altura será lo que ocupe su contenido*/
+    display: flex;
+    align-items: center;        /*Los elementos estarán centrados en el eje principal*/
+    flex-direction: column;     /*Los elementos estarán distribuidos en una sola columna*/
+    margin-top: 25px;
+}
+
+.proyectoActual .contenido {
+    padding: 0 20px;        /*El header tendrá un padding de 20px a ambos lados*/
+    width: calc(100% - 40px);       /*Al haber indicado el padding el ancho debe de ser el total menos este*/
+    display: flex;
+    flex-direction: column;     /*Los elementos dentro del div proyectoActual estarán dispuestos en una sola columna*/
+    justify-content: center;        /*Los elementos estarán centrados en el eje principal*/
+    align-items: end;       /*Los elementos estarán alineados a la derecha en el eje horizontal*/
+    gap: 75px;
+    margin-right: 300px;        /*Al estar los elementos alineados a la izquierda se establece un margen para que estos queden centrados*/
+}
+
+.proyecto {
+    background-color: #eaf1f8;      /*Se establece un fondo de color diferente para diferenciar la "tarjeta" de proyecto*/
+    border: 2.5px solid  #dce5ef;       /*Se establece un borde para la "tarjeta"*/
+    border-radius: 15px;        /*Este borde será semi cuadrado*/
+    height: auto;       /*La altura será la que ocupe el propio contenido*/
+    width: 80%;     /*Ocupara el 80% del espacio total*/
+    display: flex;
+    justify-content: space-between;     /*Los elementos de la "tarjeta" tendrán un espacio entre ellos*/
+    gap: 20px;      /*Habrá un espacio entre elementos de 20px*/
+}
+
+.proyecto .textos{
+    display: flex;
+    flex-direction: column;     /*Se indica que los textos de la "tarjeta" estarán dispuestos en una sola columna*/
+    justify-content: center;        /*Se indica que los textos estén centrados en el eje principal*/
+    align-items: start;     /*Se indica que los textos estarán alineados a la izquierdad en el eje horizontal*/
+    gap: 10px;      /*Se indica un espacio entre textos*/
+    padding: 10px 0 10px 25px;      /*Se especifica que los textos tengan un espacio de 10px arriba, 10px abajo y 25px a la izquierda*/
+}
+
+.proyecto .textos a{
+    margin-top: 10px;       /*Se especifica que el enlace a la página Proyecto Individual tenga un margen superior de 10px*/
+}
+
+.proyecto img {
+    height: 200px;       /*La altura de la imagen será la misma que la de la "tarjeta"*/
+    width: 200px;       /*El ancho de la imagen es de 200px*/
+    border-radius: 5%;      /*La imagen será semi cuadrada*/
+    object-fit: cover;      /*Se especifica que la imagen debe cubrir todo su contenedor*/
+}
+
+.proyecto .textos .textoTecnologias {
+    color: #102d50;
+    font-weight: bold;      /*Las tecnologías especificadas en la "tarjeta" sobre el proyecto estarán en negrita*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .proyectoActual .contenido {
+        margin-right: 100px;        /*Se cambiará el margen derecho a 100px*/
+        gap: 50px;
+    }
+
+    .proyecto {
+        width: 90%;     /*El ancho pasará a ser del 90% de la pantalla*/
+        gap: 15px;      /*El espaciado entre elementos será de 15px*/
+    }
+
+    .proyecto .textos {
+        padding-left: 20px;     /*El espacio de la izquierda será de 20px*/
+    }
+
+    .proyecto .textos h3 {
+        font-size: 1.1em;       /*El tamaño de fuente del título de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos p {
+        font-size: 0.9em;       /*El tamaño de fuente de los párrafos de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos .tecnologias {
+        font-size: 0.9em;       /*El tamaño de fuente de las tecnologías de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos a {
+        font-size: 1em;     /*El tamaño de fuente de los hipervínculos de la "tarjeta" será menor*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    .proyectoActual {
+        height: auto;       /*La altura de la sección será lo que ocupe su contenido*/
+        min-height: 600px;      /*La altura minima será de 600px*/
+        padding-bottom: 20px;       /*El margen inferior será de 60px*/
+        margin-top: 130px;
+    }
+
+    .proyectoActual .titulo {
+        width: calc(100% - 50px);       /*El ancho del título de sección será del 100% de la pantalla menos el padding izquierdo y los bordes*/
+        padding-left: 40px;     /*El espaciado izquierdo será de 40px*/
+        height: 60px;       /*La altura será de 60px*/
+    }
+
+    .proyectoActual .contenido {
+        margin-right: 0;        /*Se indica que ya no haya margen a la derecha*/
+        align-items: center;        /*Los elementos pasarán a estar centrados en el eje horizontal*/
+        gap: 35px;
+    }
+
+    .proyecto {
+        width: 90%;     /*El ancho de la "tarjeta" será del 90% de la pantalla*/
+        height: auto;       /*La altura será lo que ocupe el contenido*/
+        flex-direction: column-reverse;     /*La distribución pasará a ser en una columna inversa, es decir, la imagen primero*/
+        justify-content: center;        /*Los elementos estarán centrados en el eje principal*/
+        padding-top: 20px;      /*Habrá un espaciado superior de 20px*/
+        gap: 0;     /*Se eliminará el espaciado enltre elementos*/
+    }
+
+    .proyecto .textos {
+        width: 100%;        /*El ancho será el 100% permitido*/
+        padding: 20px;      /*Habrá un espaciado alrededor de los textos de 20px*/
+        align-items: center;        /*Los textos estarán centrados en el eje principal*/
+        text-align: center;     /*Los textos estarán centrados en el eje horizontal*/
+        gap: 8px;       /*Los textos tendrán un espaciado de 8px*/
+        box-sizing: border-box;     /*Se indica que los textos ocupen el mismo ancho que su contenedor padre*/
+    }
+
+    .proyecto .textos h3 {
+        font-size: 1.1em;       /*El tamaño de fuente del título de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos p {
+        font-size: 0.85em;      /*El tamaño de fuente de los párrafos de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos .tecnologias {
+        font-size: 0.75em;      /*El tamaño de fuente de las tecnologías de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos a {
+        font-size: 0.9em;       /*El tamaño de fuente de los hipervínculos de la "tarjeta" será menor*/
+        margin-top: 5px;        /*Tendrá un margen superior de 5px*/
+    }
+
+    .proyecto img {
+        width: 180px;       /*El ancho de la imagen será de 180px*/
+        height: 180px;      /*El alto de la imagen será de 180px*/
+        max-width: 100%;        /*El ancho máximo de la imagen será del 100% de su contenedor*/
+        min-width: 0;       /*El ancho minimo será de 0px*/
+        align-self: center;     /*Se indica que se centre a sí mismo*/
+        object-fit: cover;      /*Se especifica que la imagen debe cubrir todo su contenedor*/
+    }
+}
+
+/*
+    ------------- PROPIEDADES DE LA SECTION PROYECTOS -----------------------------------------------------------------------
+*/
+.proyectos {
+    height: auto;       /*La altura será lo que ocupe su contenido*/
+    display: flex;
+    align-items: center;        /*Los elementos estarán centrados en el eje principal*/
+    flex-direction: column;     /*Los elementos estarán distribuidos en una sola columna*/
+}
+
+.proyectos .contenido {
+    padding: 0 20px;        /*El header tendrá un padding de 20px a ambos lados*/
+    width: calc(100% - 40px);       /*Al haber indicado el padding el ancho debe de ser el total menos este*/
+    display: flex;
+    flex-direction: column;     /*Los elementos dentro del div proyectos estarán dispuestos en una sola columna*/
+    justify-content: center;        /*Los elementos estarán centrados en el eje principal*/
+    align-items: end;       /*Los elementos estarán alineados a la derecha en el eje horizontal*/
+    gap: 75px;
+    margin-right: 300px;        /*Al estar los elementos alineados a la izquierda se establece un margen para que estos queden centrados*/
+}
+
+.proyecto {
+    background-color: #eaf1f8;      /*Se establece un fondo de color diferente para diferenciar la "tarjeta" de proyecto*/
+    border: 2.5px solid  #dce5ef;       /*Se establece un borde para la "tarjeta"*/
+    border-radius: 15px;        /*Este borde será semi cuadrado*/
+    height: auto;       /*La altura será la que ocupe el propio contenido*/
+    width: 80%;     /*Ocupara el 80% del espacio total*/
+    display: flex;
+    justify-content: space-between;     /*Los elementos de la "tarjeta" tendrán un espacio entre ellos*/
+    gap: 20px;      /*Habrá un espacio entre elementos de 20px*/
+}
+
+.proyectos .contenido .proyecto:nth-child(even){
+    flex-direction: row-reverse;        /*Los proyectos pares tendrán la disposición invertida*/
+}
+
+.proyecto .textos{
+    display: flex;
+    flex-direction: column;     /*Se indica que los textos de la "tarjeta" estarán dispuestos en una sola columna*/
+    justify-content: center;        /*Se indica que los textos estén centrados en el eje principal*/
+    align-items: start;     /*Se indica que los textos estarán alineados a la izquierdad en el eje horizontal*/
+    gap: 10px;      /*Se indica un espacio entre textos*/
+    padding: 10px 0 10px 25px;      /*Se especifica que los textos tengan un espacio de 10px arriba, 10px abajo y 25px a la izquierda*/
+}
+
+.proyectos .contenido .proyecto:nth-child(even) .textos{
+    align-items: end;       /*Los textos de los proyectos pares están alineados a la derecha*/
+    text-align: right;
+    padding: 10px 25px 10px 0;      /*El espaciado es de 10px arriba, 25 a la derecha y 10px a la izquierda*/
+}
+
+.proyecto .textos a{
+    margin-top: 10px;       /*Se especifica que el enlace a la página Proyecto Individual tenga un margen superior de 10px*/
+}
+
+.proyecto img {
+    height: 200px;       /*La altura de la imagen será la misma que la de la "tarjeta"*/
+    width: 200px;       /*El ancho de la imagen es de 200px*/
+    border-radius: 5%;      /*La imagen será semi cuadrada*/
+    object-fit: cover;      /*Se especifica que la imagen debe cubrir todo su contenedor*/
+}
+
+.proyecto .textos .textoTecnologias {
+    color: #102d50;
+    font-weight: bold;      /*Las tecnologías especificadas en la "tarjeta" sobre el proyecto estarán en negrita*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .proyectos .contenido {
+        margin-right: 100px;        /*Se cambiará el margen derecho a 100px*/
+        gap: 50px;
+    }
+
+    .proyecto {
+        width: 90%;     /*El ancho pasará a ser del 90% de la pantalla*/
+        gap: 15px;      /*El espaciado entre elementos será de 15px*/
+    }
+
+    .proyecto .textos {
+        padding-left: 20px;     /*El espacio de la izquierda será de 20px*/
+    }
+
+    .proyecto .textos h3 {
+        font-size: 1.1em;       /*El tamaño de fuente del título de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos p {
+        font-size: 0.9em;       /*El tamaño de fuente de los párrafos de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos .tecnologias {
+        font-size: 0.9em;       /*El tamaño de fuente de las tecnologías de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos a {
+        font-size: 1em;     /*El tamaño de fuente de los hipervínculos de la "tarjeta" será menor*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    .proyectos {
+        height: auto;       /*La altura de la sección será lo que ocupe su contenido*/
+        min-height: 600px;      /*La altura minima será de 600px*/
+    }
+
+    .proyectos .titulo {
+        width: calc(100% - 50px);       /*El ancho del título de sección será del 100% de la pantalla menos el padding izquierdo y los bordes*/
+        padding-left: 40px;     /*El espaciado izquierdo será de 40px*/
+        height: 60px;       /*La altura será de 60px*/
+    }
+
+    .proyectos .contenido {
+        margin-right: 0;        /*Se indica que ya no haya margen a la derecha*/
+        align-items: center;        /*Los elementos pasarán a estar centrados en el eje horizontal*/
+        gap: 35px;
+    }
+
+    .proyecto {
+        width: 90%;     /*El ancho de la "tarjeta" será del 90% de la pantalla*/
+        height: auto;       /*La altura será lo que ocupe el contenido*/
+        flex-direction: column-reverse;     /*La distribución pasará a ser en una columna inversa, es decir, la imagen primero*/
+        justify-content: center;        /*Los elementos estarán centrados en el eje principal*/
+        padding-top: 20px;      /*Habrá un espaciado superior de 20px*/
+        gap: 0;     /*Se eliminará el espaciado enltre elementos*/
+    }
+
+    .proyecto .textos {
+        width: 100%;        /*El ancho será el 100% permitido*/
+        padding: 20px;      /*Habrá un espaciado alrededor de los textos de 20px*/
+        align-items: center;        /*Los textos estarán centrados en el eje principal*/
+        text-align: center;     /*Los textos estarán centrados en el eje horizontal*/
+        gap: 8px;       /*Los textos tendrán un espaciado de 8px*/
+        box-sizing: border-box;     /*Se indica que los textos ocupen el mismo ancho que su contenedor padre*/
+    }
+
+    .proyecto .textos h3 {
+        font-size: 1.1em;       /*El tamaño de fuente del título de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos p {
+        font-size: 0.85em;      /*El tamaño de fuente de los párrafos de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos .tecnologias {
+        font-size: 0.75em;      /*El tamaño de fuente de las tecnologías de la "tarjeta" será menor*/
+    }
+
+    .proyecto .textos a {
+        font-size: 0.9em;       /*El tamaño de fuente de los hipervínculos de la "tarjeta" será menor*/
+        margin-top: 5px;        /*Tendrá un margen superior de 5px*/
+    }
+
+    .proyecto img {
+        width: 180px;       /*El ancho de la imagen será de 180px*/
+        height: 180px;      /*El alto de la imagen será de 180px*/
+        max-width: 100%;        /*El ancho máximo de la imagen será del 100% de su contenedor*/
+        min-width: 0;       /*El ancho minimo será de 0px*/
+        align-self: center;     /*Se indica que se centre a sí mismo*/
+        object-fit: cover;      /*Se especifica que la imagen debe cubrir todo su contenedor*/
+    }
+}
+
+/*
+    ------------- PROPIEDADES DEL FOOTER -----------------------------------------------------------------------------------------------
+*/
+footer {
+    padding: 0 20px;        /*El footer tendrá un padding de 20px a ambos lados*/
+    width: calc(100% - 40px);       /*Al haber indicado el padding el ancho debe de ser el total menos este*/
+    height: 40dvh;      /*Se especifica que el alto del header sea 40dvh, es decir, que ocupe un 40% de la pantalla completa*/
+    background-color: #102d50;
+    display: flex;
+    justify-content: space-around;      /*Se especifica que los elementos del footer estén espaciados equitativamente teniendo el mismo espacio a su alrededor*/
+    align-items: center;        /*Se especifica que los elementos del footer estén alineados en el centro*/
+    margin-top: 60px;       /*Hay un espacio superior de 60px*/
+}
+
+.footerEnlaces {
+    display: flex;
+    flex-direction: column;     /*Se especifica que los enlaces estén dispuestos en columnas*/
+    justify-content: center;        /*Se indica que los enlaces estén centrados*/
+    align-items: start;     /*Se indica que los enlaces se alineen a la izquierda*/
+    gap: 20px;      /*Se especifica un espaciado entre los enlaces de 20px*/
+}
+
+.footerEnlaces p {
+    font-weight: bold;      /*Se indica que los párrados del div footerEnlaces se muestren en negrita*/
+    color: #b85d8b;
+    font-size: 1.5em;       /*Se indica que los párrafos del div footerEnlaces tengan un tamaño de 1.5em*/
+}
+
+.footerEnlaces a:not(.apartadoSeleccionado) {
+    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+    font-size: 1.1em;       /*Se indica que los hipervínculos del div footerEnlaces tengan un tamaño de 1.1em*/
+}
+
+.footerNavegacion {
+    display: flex;
+    justify-content: space-evenly;      /*Se indica que los elementos del div footerNavegacion estén espaciados equitativamente*/
+    align-items: center;        /*Se indica que los elementos estén centrados*/
+    gap: 50px;      /*Se especifica un espaciado entre elementos de 50px*/
+}
+
+.footerContacto {
+    display: flex;
+    justify-content: space-evenly;      /*Se indica que los elementos del div footerContacto estén espaciados equitativamente*/
+    align-items: center;         /*Se indica que los elementos estén centrados*/
+    gap: 70px;      /*Se especifica un espaciado entre elementos de 70px*/
+}
+
+.footerNombre {
+    display: flex;
+    flex-direction: column;     /*Se indica que los elementos del div footerNombre estén dispuestos en columnas*/
+    justify-content: center;        /*Se indica que los elementos estén centrados en el eje principal*/
+    align-items: center;        /*Se indica que los elementos estén centrados en el eje horizonñtal*/
+    gap: 20px;      /*Se especifica un espaciado entre los elementos de 20px*/
+}
+
+.footerNombre img {
+    height: calc(20dvh - 10px);     /*El alto de la imagen será 30dvh menos lo que ocupa su borde*/
+    width: calc(20dvh - 10px);      /*El ancho de la imagen será 30dvh menos lo que ocupa su borde*/
+    object-fit: cover;      /*Se indica que la imagen debe de cubrir todo su contenedor*/
+    border: 5px solid #b85d8b;      /*Se le pone un borde de 5px*/
+}
+
+.footerNombre p {
+    font-weight: bold;      /*Se indica que el texto sea en negrita*/
+    font-size: 1.2em;       /*Se indica que el tamaño de fuente sea 1.2em*/
+    color: white;       /*Se indica que el color de la fuente del texto sea blanco*/
+    text-align: center;     /*Se indica que el texto está centrado*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .footerEnlaces a {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente de los hipervínculos del div footerEnlaces*/
+    }
+    
+    .footerNavegacion {
+        gap: 25px;      /*Se cambiará el espacio entre elementos del div footerNavegacion*/
+    }
+
+    .footerContacto {
+        gap: 35px;      /*Se cambiará el espacio entre elementos del div footerContacto*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    footer {
+        height: 50dvh;      /*Se camabiará la altura del header para que ocupe más*/
+        padding-top: 10px;      /*Habrá un espacio superior de 10px*/
+        margin-top: 20px;       /*Hay un espacio superior de 60px*/
+    }
+    
+    .footerEnlaces p{
+        font-size: 1.2em;       /*Se cambiará el tamaño de fuente del texto del div footerEnlaces*/
+    }
+
+    .footerEnlaces a {
+        font-size: 0.8em;       /*Se cambiará el tamaño de fuente de los hipervínculos del div footerEnlaces*/
+    }
+
+    .footerNavegacion a.apartadoSeleccionado {
+        font-size: 1.1em;       /*Se indica que el tamaño de la fuente del elemento seleccionado sea menor*/
+    }
+
+    .footerNavegacion, .footerContacto{
+        flex-direction: column;     /*Se cambiará la disposición de los elementos del div footerNavegacion y del div footerContacto a columnas*/
+        align-items: start;     /*Se alinearán los elementos a la izquierda*/
+        gap: 10px;      /*Se modificará el espaciado entre elementos*/
+    }
+
+    .footerNombre p {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del párrafo del div footerNombre*/
+        width: 100px;       /*Se cambiará el tamaño del elemento párrafo*/
+    }
+
+    .footerNombre img {
+        height: calc(15dvh - 10px);     /*El alto de la imagen será 15dvh menos lo que ocupa su borde*/
+        width: calc(15dvh - 10px);      /*El ancho de la imagen será 15dvh menos lo que ocupa su borde*/
+    }
+}
