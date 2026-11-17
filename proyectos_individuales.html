@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio-Pablo-Muiño-Rodríguez-Proyectos-Individuales</title>
+        <link rel="stylesheet" href="css/proyectos_individuales.css">
+    </head>
+    <body>
+        <!-- Header principal de la página web -->
+        <header>
+            <!-- Nombre e imagen personal incluidos en el header -->
+            <div class="headerNombre">
+                <img src="img/img_cv.png" alt="Foto personal de frente">
+                <p>Pablo Muiño Rodríguez</p>
+            </div>
+
+            <!-- Apartados de la página web, así como un enlace de descarga del CV personal -->
+            <div class="headerApartados">
+                <div class="apartados">
+                    <a href="index.html">Inicio</a>
+                    <a href="proyectos.html" class="apartadoSeleccionado">Proyectos</a>
+                    <a href="formacion.html">Formación</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                
+                <div class="CV">
+                    <a href="docs/CV_Pablo_Muino_Rodriguez.pdf" download="CV_Pablo_Muino_Rodriguez.pdf">Descargar CV</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sección del proyecto actual -->
+        <section class="proyecto">
+
+            <!-- Encabezado del proyecto actual -->
+            <div class="encabezado">
+                <div class="tituloDescripcion">
+                    <h1 id="tituloProyecto"></h1>
+                    <p id="descripcion"></p>
+                </div>
+                <img id="imagenProyecto"  src="" alt="">
+            </div>
+            
+            <!-- Información adicional del proyecto -->
+            <div class="informacion">
+
+                <!-- Detalles del proyecto y enlace a la página proyectos -->
+                <div class="detallesVolver">
+                    <div class="detalles">
+                        <h3>Año</h3>
+                        <p id="año"></p>
+                        <a id="url" href="">Ver en GitHub</a>
+                        <h3>Tecnologías</h3>
+                        <ul id="tecnologias"></ul>
+                    </div>
+                    
+                    <a class="enlaceProyectos" href="proyectos.html"><- Volver a todos los proyectos</a>
+                </div>
+
+                <!-- Contexto del proyecto y sus funcionalidades -->
+                <div class="contextoFunciones">
+                    <div class="contexto">
+                        <h2>Contexto y solución</h2>
+                        <p id="descripcionCompleta"></p>
+                    </div>
+                    <div class="funciones">
+                        <h2>¿Qué permite hacer?</h2>
+                        <ol id="utilidades"></ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer principal de la página web -->
+        <footer>
+            <!-- Enlaces de navegación y de contacto -->
+            <div class="footerEnlaces">
+                <p>Navegación</p>
+                <div class="footerNavegacion">
+                    <a href="index.html">Inicio</a>
+                    <a href="proyectos.html" class="apartadoSeleccionado">Proyectos</a>
+                    <a href="formacion.html">Formación</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+
+                <p>Contacto</p>
+                <div class="footerContacto">
+                    <a href="mailto:pabmuirod@gmail.com">pabmuirod@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/pablo-muiño-62a3a3372">LinkedIn</a>
+                    <a href="https://github.com/Pablo-Muino">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Nombre e imagen personal incluidos en el footer -->
+            <div class="footerNombre">
+                <img src="img/img_cv.png" alt="Foto personal de frente">
+                <p>Pablo Muiño Rodríguez</p>
+            </div>
+        </footer>
+
+        <!-- Scripts que se efectuan en esta página -->
+        <script src="js/proyecto.js"></script>
+        <script src="js/proyectos.js"></script>
+        <script src="js/proyectos_individuales.js"></script>
+    </body>
+</html>
