@@ -1,0 +1,116 @@
+/*
+    ------------- PROPIEDADES DEL FOOTER -----------------------------------------------------------------------------------------------
+*/
+footer {
+    padding: 0 20px;        /*El footer tendrá un padding de 20px a ambos lados*/
+    width: calc(100% - 40px);       /*Al haber indicado el padding el ancho debe de ser el total menos este*/
+    height: 40dvh;      /*Se especifica que el alto del header sea 40dvh, es decir, que ocupe un 40% de la pantalla completa*/
+    background-color: #102d50;
+    display: flex;
+    justify-content: space-around;      /*Se especifica que los elementos del footer estén espaciados equitativamente teniendo el mismo espacio a su alrededor*/
+    align-items: center;        /*Se especifica que los elementos del footer estén alineados en el centro*/
+}
+
+.footerEnlaces {
+    display: flex;
+    flex-direction: column;     /*Se especifica que los enlaces estén dispuestos en columnas*/
+    justify-content: center;        /*Se indica que los enlaces estén centrados*/
+    align-items: start;     /*Se indica que los enlaces se alineen a la izquierda*/
+    gap: 20px;      /*Se especifica un espaciado entre los enlaces de 20px*/
+}
+
+.footerEnlaces p {
+    font-weight: bold;      /*Se indica que los párrados del div footerEnlaces se muestren en negrita*/
+    color: #b85d8b;
+    font-size: 1.5em;       /*Se indica que los párrafos del div footerEnlaces tengan un tamaño de 1.5em*/
+}
+
+.footerEnlaces a:not(.apartadoSeleccionado) {
+    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+    font-size: 1.1em;       /*Se indica que los hipervínculos del div footerEnlaces tengan un tamaño de 1.1em*/
+}
+
+.footerNavegacion {
+    display: flex;
+    justify-content: space-evenly;      /*Se indica que los elementos del div footerNavegacion estén espaciados equitativamente*/
+    align-items: center;        /*Se indica que los elementos estén centrados*/
+    gap: 50px;      /*Se especifica un espaciado entre elementos de 50px*/
+}
+
+.footerContacto {
+    display: flex;
+    justify-content: space-evenly;      /*Se indica que los elementos del div footerContacto estén espaciados equitativamente*/
+    align-items: center;         /*Se indica que los elementos estén centrados*/
+    gap: 70px;      /*Se especifica un espaciado entre elementos de 70px*/
+}
+
+.footerNombre {
+    display: flex;
+    flex-direction: column;     /*Se indica que los elementos del div footerNombre estén dispuestos en columnas*/
+    justify-content: center;        /*Se indica que los elementos estén centrados en el eje principal*/
+    align-items: center;        /*Se indica que los elementos estén centrados en el eje horizonñtal*/
+    gap: 20px;      /*Se especifica un espaciado entre los elementos de 20px*/
+}
+
+.footerNombre img {
+    height: calc(20dvh - 10px);     /*El alto de la imagen será 30dvh menos lo que ocupa su borde*/
+    width: calc(20dvh - 10px);      /*El ancho de la imagen será 30dvh menos lo que ocupa su borde*/
+    object-fit: cover;      /*Se indica que la imagen debe de cubrir todo su contenedor*/
+    border: 5px solid #b85d8b;      /*Se le pone un borde de 5px*/
+}
+
+.footerNombre p {
+    font-weight: bold;      /*Se indica que el texto sea en negrita*/
+    font-size: 1.2em;       /*Se indica que el tamaño de fuente sea 1.2em*/
+    color: white;       /*Se indica que el color de la fuente del texto sea blanco*/
+    text-align: center;     /*Se indica que el texto está centrado*/
+}
+
+@media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
+    .footerEnlaces a {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente de los hipervínculos del div footerEnlaces*/
+    }
+    
+    .footerNavegacion {
+        gap: 25px;      /*Se cambiará el espacio entre elementos del div footerNavegacion*/
+    }
+
+    .footerContacto {
+        gap: 35px;      /*Se cambiará el espacio entre elementos del div footerContacto*/
+    }
+}
+
+@media screen and (max-width: 750px) {      /*Media query que se efectuará cuando la pantalla tenga como máximo 750px de ancho*/
+    footer {
+        height: 50dvh;      /*Se camabiará la altura del header para que ocupe más*/
+        padding-top: 20px;      /*Habrá un espacio superior de 20px*/
+    }
+    
+    .footerEnlaces p{
+        font-size: 1.2em;       /*Se cambiará el tamaño de fuente del texto del div footerEnlaces*/
+    }
+
+    .footerEnlaces a {
+        font-size: 0.8em;       /*Se cambiará el tamaño de fuente de los hipervínculos del div footerEnlaces*/
+    }
+
+    .footerNavegacion a.apartadoSeleccionado {
+        font-size: 1.1em;       /*Se indica que el tamaño de la fuente del elemento seleccionado sea menor*/
+    }
+
+    .footerNavegacion, .footerContacto{
+        flex-direction: column;     /*Se cambiará la disposición de los elementos del div footerNavegacion y del div footerContacto a columnas*/
+        align-items: start;     /*Se alinearán los elementos a la izquierda*/
+        gap: 10px;      /*Se modificará el espaciado entre elementos*/
+    }
+
+    .footerNombre p {
+        font-size: 1em;     /*Se cambiará el tamaño de fuente del párrafo del div footerNombre*/
+        width: 100px;       /*Se cambiará el tamaño del elemento párrafo*/
+    }
+
+    .footerNombre img {
+        height: calc(15dvh - 10px);     /*El alto de la imagen será 15dvh menos lo que ocupa su borde*/
+        width: calc(15dvh - 10px);      /*El ancho de la imagen será 15dvh menos lo que ocupa su borde*/
+    }
+}
