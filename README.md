@@ -3,6 +3,8 @@ Portfolio personal maquetado con HTML y CSS a mano, acompañado de funcionalidad
 
 ## Estructura del proyecto
 El portfolio está compuesto por cinco páginas principales, conectadas mediante un sistema de navegación común:
+
+```mermaid
 flowchart TD
     A["Inicio"]
     B["Proyectos"]
@@ -30,6 +32,7 @@ flowchart TD
     F -.-> C
     F -.-> D
     F -.-> E
+```
 
 ## ¿Qué páginas contiene?
 - Página de inicio, donde se me presenta y se muestran distintas competencias personales. Entre las que se encuentran varios de mis proyectos realizados y competencias adquiridas durante mi trayectoria.
