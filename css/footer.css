@@ -30,11 +30,16 @@ footer {
     font-size: 1.1em;       /*Se indica que los hipervínculos del div footerEnlaces tengan un tamaño de 1.1em*/
 }
 
-.footerNavegacion {
+.footerNavegacion ul {
     display: flex;
-    justify-content: space-evenly;      /*Se indica que los elementos del div footerNavegacion estén espaciados equitativamente*/
+    justify-content: space-evenly;      /*Se indica que los elementos del nav footerNavegacion estén espaciados equitativamente*/
     align-items: center;        /*Se indica que los elementos estén centrados*/
     gap: 50px;      /*Se especifica un espaciado entre elementos de 50px*/
+    list-style: none;       /*Se eliminan los marcadores de la lista*/
+}
+
+.footerNavegacion a {
+    display: inline-block;      /*Se especifica que los enlaces del nav apartados sean inline-block*/
 }
 
 .footerContacto {
@@ -98,8 +103,8 @@ footer {
         font-size: 1.1em;       /*Se indica que el tamaño de la fuente del elemento seleccionado sea menor*/
     }
 
-    .footerNavegacion, .footerContacto{
-        flex-direction: column;     /*Se cambiará la disposición de los elementos del div footerNavegacion y del div footerContacto a columnas*/
+    .footerNavegacion ul, .footerContacto{
+        flex-direction: column;     /*Se cambiará la disposición de los elementos del nav footerNavegacion y del div footerContacto a columnas*/
         align-items: start;     /*Se alinearán los elementos a la izquierda*/
         gap: 10px;      /*Se modificará el espaciado entre elementos*/
     }

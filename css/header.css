@@ -1,3 +1,4 @@
+
 /*
     ------------- PROPIEDADES DEL HEADER -----------------------------------------------------------------------------------------------
 */
@@ -41,16 +42,21 @@ header {
     gap: 30px;      /*El espacio que separa a ambos elementos será de 30px*/
 }
 
-.apartados {
+.apartados ul {
     display: flex;
-    justify-content: space-evenly;      /*Se especifica que los elementos del div apartados estén espaciados equitativamente*/
-    align-items: center;        /*Se especifica que los elementos del div apartados estén alineados en el centro*/
+    justify-content: space-evenly;      /*Se especifica que los elementos de la lista estén espaciados equitativamente*/
+    align-items: center;        /*Se especifica que los elementos de la lista estén alineados en el centro*/
     gap: 30px;      /*El espacio que separa a los elementos será de 30px*/
-    text-align: right;     /*Se especifica que el texto de los elementos del div apartados estén alineados a la derecha*/
+    text-align: right;      /*Se especifica que el texto de los elementos esté alineado a la derecha*/
+    list-style: none;       /*Se eliminan los marcadores de la lista*/
 }
 
-.apartados a:not(.apartadoSeleccionado){
-    text-decoration: none;      /*Se indica que los hipervínculos del div apartados no tengan ningún estilo*/
+.apartados a {
+    display: inline-block;      /*Se especifica que los enlaces del nav apartados sean inline-block*/
+}
+
+.apartados a:not(.apartadoSeleccionado) {
+    text-decoration: none;      /*Se indica que los hipervínculos no tengan ningún estilo*/
     color: white;       /*Se indica que los hipervínculos sean de color blanco*/
     font-size: 1.1em;       /*Se indica que el tamaño de fuente sea 1.1em*/
 }
@@ -67,8 +73,8 @@ header {
 }
 
 .CV a {
-    text-decoration: none;      /*Se indica que los hipervínculos del div CV no tengan ningún estilo*/
-    color: white;       /*Se indica que los hipervínculos sean de color blanco*/
+    text-decoration: none;      /*Se indica que los hipervínculos no tengan ningún estilo*/
+    color: white;       /*El color de fuente será blanco*/
 }
 
 .CV:hover {     /*Efecto que se realizará el div CV al pasar el ratón por encima*/
@@ -78,7 +84,7 @@ header {
 @media screen and (max-width: 1000px) {     /*Media query que se efectuará cuando la pantalla tenga como máximo 1000px de ancho*/
     .headerNombre p {
         font-size: 1em;     /*Se cambiará el tamaño de fuente del texto del div headerNombre*/
-        width: 100px;       /*Se cambiará el tamaño del del texto del div headerNombre*/
+        width: 100px;       /*Se cambiará el tamaño del texto del div headerNombre*/
     }
 
     .headerApartados {
@@ -110,17 +116,17 @@ header {
         height: calc(8dvh - 10px);     /*El alto de la imagen será 8dvh menos lo que ocupa su borde*/
         width: calc(8dvh - 10px);      /*El ancho de la imagen será 8dvh menos lo que ocupa su borde*/
     }
-    
+
     .CV {
         font-size: 0.8em;     /*Se cambiará el tamaño de fuente del texto del div CV*/
-        width: 70px;        /*Se cambiarña el ancho del botón para que ocupe menos*/
+        width: 70px;        /*Se cambiará el ancho del botón para que ocupe menos*/
     }
 
-    .apartados {
-        font-size: 0.8em;       /*Se cambiará el tamaño de fuente del texto del div apartados*/
+    .apartados ul {
+        font-size: 0.8em;       /*Se cambiará el tamaño de fuente del texto de los apartados*/
         display: grid;      /*Se cambiará el display de flex a grid*/
         grid-template-rows: repeat(4, 1fr);      /*Se especificará que el grid tenga 4 filas del mismo tamaño*/
-        row-gap: 2.5px;      /*Se especificará que el espacio entre las columnas sea de 2.5px*/
+        row-gap: 2.5px;      /*Se especificará que el espacio entre las filas sea de 2.5px*/
     }
 
     .headerApartados {
